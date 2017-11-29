@@ -1,0 +1,7 @@
+<button (click)="lib()">Login</button>
+<h3>List of Liberaries</h3>
+<ul>
+  <li *ngFor="let lib of results">
+      <a routerLink="/login" [queryParams]="{id: lib._id}" routerLinkActive="active">{{lib.liberaryName}}</a>
+  </li>
+</ul>

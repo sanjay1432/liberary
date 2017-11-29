@@ -1,0 +1,15 @@
+<a (click)="logout()" >Logout</a>
+<h3>Welcome</h3>
+<div *ngIf="user">
+<p>Create Liberary</p>
+<form #heroForm="ngForm">
+    
+      <div class="form-group">
+        <input name="libName" class="form-control form-control-lg" placeholder=" Enter Liberary Name" ngModel required #libName="ngModel">
+         
+      </div>
+    
+        <button (click)="onSubmit(heroForm)">Add Liberary</button>
+            </form>
+</div>
+

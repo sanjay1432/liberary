@@ -1,0 +1,19 @@
+<h1> Login {{libName}}</h1>
+<form #myForm="ngForm">
+
+  <div class="form-group">
+    <input name="username" class="form-control form-control-lg" placeholder=" Enter your username" ngModel required #username="ngModel">
+    <br/>
+    <input type="password" name="password" class="form-control form-control-lg" placeholder=" Enter your password" ngModel required
+      #password="ngModel">
+  </div>
+
+    <button (click)="onSubmit(myForm)">Login</button>
+    <span>
+      <p>Don't have an account?
+        <span>
+          <button (click)="onSignup()">Signup</button>
+        </span>
+      </p>
+    </span>
+</form>

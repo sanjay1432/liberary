@@ -1,28 +1,19 @@
-# LiberaryManagementSystem
+# liberary management system
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.6.
+# Requirement
 
-## Development server
+1. Should have Angular Cli
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+# How to use
 
-## Code scaffolding
+2. After cloning,  go to project  directory.
+3. Type npm install.
+4. Type ng build , this will create dist folder.
+5. After that type nodemon/ npm start.
+6. And go to web browser and hit http://localhost:3000.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
+# admin credential who can add liberary
+ username: superadmin
+ password:  123456
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+ 
