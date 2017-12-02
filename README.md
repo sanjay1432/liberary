@@ -16,4 +16,8 @@
  username: superadmin
  password:  123456
 
- 
+# Normal User
+  Have to sign up first to access liberary.
+
+# current Issues
+  when user issue a book or return a book. The status is changes fro every in liberary for that user. This will require some investigation.
