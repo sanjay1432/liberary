@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var user = require('./routes/user');
 var Liberary = require('./routes/liberary');
+var book = require('./routes/book');
 
 var app = express();
 
@@ -30,6 +31,8 @@ app.use(express.static(path.join(__dirname, 'dist')));
 app.use('/user', user);
 // app.use('/profile', profile);
 app.use('/liberary', Liberary);
+
+app.use('/book', book);
 
 
 app.get('*', (req, res) => {

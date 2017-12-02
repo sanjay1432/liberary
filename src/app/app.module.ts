@@ -11,6 +11,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { AuthGuard }            from './auth-guard.service';
 import { AuthService }          from './auth.service';
 import { HomeComponent } from './home/home.component';
+import { BooksComponent } from './books/books.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HomeComponent } from './home/home.component';
     LiberaryComponent,
     SignupComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    BooksComponent
   ],
   imports: [
     BrowserModule,

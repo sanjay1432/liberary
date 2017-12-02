@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
     // res.send('Express REST API');
     Liberary.find(function(err, liberary){
       if (err){ res.send(err); }
-        console.log(liberary)
+
       res.send(liberary);
     });
   
@@ -15,10 +15,22 @@ router.get('/', function(req, res, next) {
 
   router.post('/info', function(req, res, next) {
     // res.send('Express REST API');
-    console.log(req.body)
+
     Liberary.find({ _id: req.body.id }, function(err, liberary){
       if (err){ res.send(err); }
         console.log(liberary)
+      res.send(liberary);
+    });
+  
+  });
+
+  router.post('/remove', function(req, res, next) {
+    // res.send('Express REST API');
+    console.log(req.body)
+    Liberary.remove({ _id: req.body.liberaryId}, function(err, liberary){
+      if (err){ res.send(err); }
+      console.log('Liberary Removed')
+ 
       res.send(liberary);
     });
   
@@ -36,7 +48,7 @@ router.post('/',function(req,res){
               if (err) { res.send(err); 
                }
             //    res.json({ message: 'We have created a new user!' });  
-            console.log(libresponse)
+
             res.send(libresponse);
       });
 });

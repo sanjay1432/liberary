@@ -17,16 +17,14 @@ export class AuthService {
   login(username: String, password: String) {
     return this.http.post('/user/authenticate',{ username: username, password: password })
     .map((response: Response) => {
-           console.log('at auth : '+response.json())
+
            let user = response.json();
            localStorage.setItem('currentUser', JSON.stringify(user));
 
            if(user.token == false){ 
             return  this.validLogin = false;
        }
-       else if(user.userinfo.activated==false){
-         return user;
-       }else{
+       else{
          return  this.validLogin = true;
        }
           

@@ -2,10 +2,8 @@
 // import { ObjectID, ObjectId } from '../../Users/SanjayChopra/AppData/Local/Microsoft/TypeScript/2.6/node_modules/@types/bson';
 
 var mongoose = require('mongoose');
-
 var LiberarySchema = new mongoose.Schema({
-  liberaryName:String,
-  
+  liberaryName:{type: String},
   updated_at: { type: Date, default: Date.now },
   created_at: { type: Date, default: Date.now },
 });

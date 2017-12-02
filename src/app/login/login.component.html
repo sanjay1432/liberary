@@ -1,6 +1,8 @@
-<h1> Login {{libName}}</h1>
-<form #myForm="ngForm">
+<div style="width:33rem; margin:0 auto;">
 
+<form #myForm="ngForm" *ngIf ="!admin">
+  <h3> Login {{libName}}</h3>
+  <button  (click)="goBack()" class="btn btn-outline-info" style="float:right">Back</button>
   <div class="form-group">
     <input name="username" class="form-control form-control-lg" placeholder=" Enter your username" ngModel required #username="ngModel">
     <br/>
@@ -8,12 +10,28 @@
       #password="ngModel">
   </div>
 
-    <button (click)="onSubmit(myForm)">Login</button>
+   <span><button (click)="onSubmit(myForm)" class="btn btn-outline-success">Login</button>
     <span>
       <p>Don't have an account?
         <span>
-          <button (click)="onSignup()">Signup</button>
+          <button (click)="onSignup()" class="btn btn-outline-success">Signup</button>
         </span>
       </p>
     </span>
+  </span> 
 </form>
+
+  <form #myForm="ngForm" *ngIf ="admin">
+    <h3> Login {{libName}}</h3>
+     <h5>Only admin can create/remove liberary. Are you an admin?</h5>
+    <div class="form-group">
+      <input name="username" class="form-control form-control-lg" placeholder=" Enter your username" ngModel required #username="ngModel">
+      <br/>
+      <input type="password" name="password" class="form-control form-control-lg" placeholder=" Enter your password" ngModel required
+        #password="ngModel">
+    </div>
+  
+      <span><button (click)="onSubmit(myForm)" class="btn btn-outline-success">Login</button> <button  (click)="goBack()" class="btn btn-outline-info">Back</button></span>
+    
+  </form>
+</div>

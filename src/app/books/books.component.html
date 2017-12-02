@@ -1,0 +1,13 @@
+<button  (click)="goBack()" class="btn btn-outline-info" style="float:right">Back</button>
+<form #bookForm="ngForm">
+    
+      <div class="form-group">
+        <input name="title" class="form-control form-control-lg" placeholder="Book Title" ngModel required #title="ngModel">
+        <input name="author" class="form-control form-control-lg" placeholder="Book Author" ngModel required #author="ngModel">
+        <input name="price" class="form-control form-control-lg" placeholder="Book Price" ngModel required #price="ngModel">
+        <input name="quantity" class="form-control form-control-lg" placeholder="Quantity" ngModel required #quantity="ngModel">
+         
+      </div>
+    
+        <button (click)="onSubmit(bookForm)" class="btn btn-outline-success">Add Book</button>
+            </form>

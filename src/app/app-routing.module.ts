@@ -5,12 +5,14 @@ import { SignupComponent } from './signup/signup.component';
 import { LiberaryComponent } from './liberary/liberary.component';
 import { AuthGuard }                from './auth-guard.service';
 import { HomeComponent } from './home/home.component';
+import { BooksComponent } from './books/books.component';
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home',  component: HomeComponent },
   { path: 'login',  component: LoginComponent },
   { path: 'signup',  component: SignupComponent },
   { path: 'liberary',  component: LiberaryComponent,canLoad: [AuthGuard], canActivate: [AuthGuard]},
+  { path: 'books',  component: BooksComponent,canLoad: [AuthGuard], canActivate: [AuthGuard]},
 
 ];
 

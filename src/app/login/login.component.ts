@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormGroup, AbstractControl, NgForm,FormBuilder, Validators} from '@angular/forms';
 import { Router, ActivatedRoute}      from '@angular/router';
 import { AuthService } from '../auth.service';
+import { Location } from '@angular/common';
 import { HttpClient } from "@angular/common/http";
 @Component({
   selector: 'app-login',
@@ -9,14 +10,16 @@ import { HttpClient } from "@angular/common/http";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  admin: boolean = false;
   libName: any;
   id: any;
   private authService:AuthService = null;
-  constructor( private _activatedRoute: ActivatedRoute,public router: Router,auth:AuthService,private http: HttpClient) {
+  constructor( private location: Location,private _activatedRoute: ActivatedRoute,public router: Router,auth:AuthService,private http: HttpClient) {
     this.authService = auth;
     _activatedRoute.queryParams.subscribe(
       params =>{ 
       this.id = params['id'];
+      this.admin = params['admin'];
     }
     );
    }
@@ -37,8 +40,10 @@ export class LoginComponent implements OnInit {
   onSignup(): void {
     this.router.navigate(['signup']);
   }
+  goBack(){
+    this.location.back();
+  } 
   public onSubmit(form: NgForm):void {
-   console.log(form)
       this.authService.login(form.value.username,form.value.password)
             .subscribe(user => {
                   // Get the redirect URL from our auth service
@@ -47,7 +52,11 @@ export class LoginComponent implements OnInit {
                  
                     let redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/liberary';
                     // Redirect the user
-                    this.router.navigate([redirect+'id ='+this.id]);
+                    if(this.id != undefined){
+                    this.router.navigate([redirect,{'id':this.id}]);
+                    }else{
+                      this.router.navigate([redirect]);
+                    }
                   }else if(user == false){
                     alert('Username/Password not matched!')
                   }
